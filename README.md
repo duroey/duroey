@@ -1,16 +1,29 @@
-## Hi there 👋
+# 李华鹏 · duroey
 
-<!--
-**duroey/duroey** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+我关注人与 AI 一起工作的方式：从语音表达、上下文理解和 Agent 执行，到长期对话中的知识积累与新想法。喜欢从自己的使用需求出发，把想法做成工具，再根据实际反馈继续改进。
 
-Here are some ideas to get you started:
+## 从这里开始
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+| 项目 | 问题与我的工作 | 当前入口 |
+| --- | --- | --- |
+| **MyType** | 基于 Type4Me，把口述接到具体工作：增加桌面 Agent 会话检索、上下文交接与 Inbox 反馈。 | [公开源码与项目说明](https://github.com/duroey/MyType) |
+| **DSH Study Tree** | 将学习中的前置问题派生为真实子会话，用树状导航支持递归深入、回到原讨论和阅读位置。 | [安装、截图与使用说明](https://github.com/duroey/dsh-study-tree) |
+| **第二大脑** | 以 Agent 历史对话为知识入口，用本地索引、知识提炼与证据校验探索跨主题联系和新想法。 | [个人研究原型 · 项目说明](projects/second-brain.md) |
+
+这几项工作分别回应表达、学习和知识重组中的问题。我希望它们逐渐支持更连续的人机协作，而不仅是一次提问和一次回答。
+
+## 其他实践
+
+- **[个人量化与投研工作台](projects/quant-workbench.md)**：用规则扫描和机器学习排序缩小研究范围，再结合事件背景、历史快照与日报复盘。工作覆盖数据处理、模型训练、回测口径和运行编排；项目说明展示系统如何协作，源码目前未公开。
+- **[AI 硬件灵感推荐器](https://github.com/duroey/ai-hardware-inspiration)**：把传感器、执行器和日常载体整理为可组合的产品要素，用 LLM 生成创意、检索竞品并筛选结果。探索的是怎样系统地产生值得继续验证的方向。
+
+## 从开源方案出发，解决自己的问题
+
+- **[Xime 语音输入可靠性改造](https://github.com/duroey/Xime/commit/29a966762b5c809b4f417312ca88136ad4b1f7c5)**：针对语音建连时的首段音频延迟和发送乱序，调整会话队列、结束顺序与取消行为，并补充回归用例。改动在独立分支，尚未并入默认分支。
+- **[Sleepless 可恢复电源配置](https://github.com/duroey/Sleepless/tree/agent/recoverable-full-awake-profile)**：为无人值守任务补充配置快照、关闭恢复和失败重试，把“保持唤醒”做成可以恢复原状的操作过程。改动在独立分支，尚未并入默认分支。
+
+## 背景与联系
+
+中国科学院计算技术研究所硕士在读，所在课题组研究大模型训练与推理系统。我的项目实践横跨需求设计、算法与模型应用、工程实现和用户反馈。
+
+[duroeyli@gmail.com](mailto:duroeyli@gmail.com)
