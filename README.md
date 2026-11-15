@@ -1,29 +1,29 @@
-# 李华鹏 · duroey
+# duroey
 
-我关注人与 AI 一起工作的方式：从语音表达、上下文理解和 Agent 执行，到长期对话中的知识积累与新想法。喜欢从自己的使用需求出发，把想法做成工具，再根据实际反馈继续改进。
+I build tools for working with AI: voice input, contextual agent workflows, and knowledge reuse across long-running conversations. Most projects start with a problem I encounter myself, then evolve through use, feedback, and iteration.
 
-## 从这里开始
+## Start here
 
-| 项目 | 问题与我的工作 | 当前入口 |
+| Project | Problem and my work | Explore |
 | --- | --- | --- |
-| **MyType** | 基于 Type4Me，把口述接到具体工作：增加桌面 Agent 会话检索、上下文交接与 Inbox 反馈。 | [公开源码与项目说明](https://github.com/duroey/MyType) |
-| **DSH Study Tree** | 将学习中的前置问题派生为真实子会话，用树状导航支持递归深入、回到原讨论和阅读位置。 | [安装、截图与使用说明](https://github.com/duroey/dsh-study-tree) |
-| **第二大脑** | 以 Agent 历史对话为知识入口，用本地索引、知识提炼与证据校验探索跨主题联系和新想法。 | [个人研究原型 · 项目说明](projects/second-brain.md) |
+| **MyType** | Connect spoken intent to ongoing work. Built on Type4Me, with my extensions for desktop agent session search, context handoff, and a shared Inbox. | [Source and project story](https://github.com/duroey/MyType) |
+| **DSH Study Tree** | Explore prerequisite questions without losing the learning thread. I built real session forks, recursive exploration, and tree navigation back to the source discussion. | [Install, screenshots, and guide](https://github.com/duroey/dsh-study-tree) |
+| **Second Brain** | Turn agent conversation history into reusable knowledge. A local indexing and evidence-checking prototype for finding connections across topics and testing new ideas. | [Research prototype and case study](projects/second-brain.md) |
 
-这几项工作分别回应表达、学习和知识重组中的问题。我希望它们逐渐支持更连续的人机协作，而不仅是一次提问和一次回答。
+These projects address expression, learning, and knowledge recombination. The longer-term goal is more continuous collaboration between people and AI.
 
-## 其他实践
+## More projects
 
-- **[个人量化与投研工作台](projects/quant-workbench.md)**：用规则扫描和机器学习排序缩小研究范围，再结合事件背景、历史快照与日报复盘。工作覆盖数据处理、模型训练、回测口径和运行编排；项目说明展示系统如何协作，源码目前未公开。
-- **[AI 硬件灵感推荐器](https://github.com/duroey/ai-hardware-inspiration)**：把传感器、执行器和日常载体整理为可组合的产品要素，用 LLM 生成创意、检索竞品并筛选结果。探索的是怎样系统地产生值得继续验证的方向。
+- **[Quantitative Research Workbench](projects/quant-workbench.md)** — Combine rule-based screening and machine-learning ranking with event research, dated snapshots, and review. My work spans data processing, model training, evaluation conventions, and operational workflows. Source repositories remain private.
+- **[AI Hardware Idea Explorer](https://github.com/duroey/ai-hardware-inspiration)** — Organize sensors, actuators, and everyday product categories into a combinatorial search space, then use LLMs and competitor research to identify ideas worth investigating.
 
-## 从开源方案出发，解决自己的问题
+## Adapting open source to real needs
 
-- **[Xime 语音输入可靠性改造](https://github.com/duroey/Xime/commit/29a966762b5c809b4f417312ca88136ad4b1f7c5)**：针对语音建连时的首段音频延迟和发送乱序，调整会话队列、结束顺序与取消行为，并补充回归用例。改动在独立分支，尚未并入默认分支。
-- **[Sleepless 可恢复电源配置](https://github.com/duroey/Sleepless/tree/agent/recoverable-full-awake-profile)**：为无人值守任务补充配置快照、关闭恢复和失败重试，把“保持唤醒”做成可以恢复原状的操作过程。改动在独立分支，尚未并入默认分支。
+- **[Xime: reliable voice-input startup](https://github.com/duroey/Xime/commit/29a966762b5c809b4f417312ca88136ad4b1f7c5)** — Addressed delayed or out-of-order startup audio with session queues, ordered termination, cancellation handling, and regression cases. The change is on a separate branch and has not been merged into the default branch.
+- **[Sleepless: recoverable power settings](https://github.com/duroey/Sleepless/tree/agent/recoverable-full-awake-profile)** — Added configuration snapshots, restoration, and failure recovery for unattended tasks. The change is on a separate branch and has not been merged into the default branch.
 
-## 背景与联系
+## Background and contact
 
-中国科学院计算技术研究所硕士在读，所在课题组研究大模型训练与推理系统。我的项目实践横跨需求设计、算法与模型应用、工程实现和用户反馈。
+MSc student at the Institute of Computing Technology, Chinese Academy of Sciences. My research group works on LLM training and inference systems. My projects span product design, applied ML, engineering, and user feedback.
 
 [duroeyli@gmail.com](mailto:duroeyli@gmail.com)
