@@ -1,52 +1,91 @@
-# 第二大脑：从 Agent 对话中寻找新的联系
+# Second Brain: finding new connections in agent conversations
 
-以历史对话为个人知识入口，探索知识重组与新想法的生成、验证。
+Use conversation history as a source of personal knowledge, then explore how
+reorganized information can lead to ideas that can be tested.
 
-**当前阶段：个人研究原型，源码尚未公开。**
+**Current stage: personal research prototype; source code is not public yet.**
 
-[返回个人主页](../README.md)
+[Back to profile](../README.md)
 
-## 我想解决什么问题
+## The problem I want to solve
 
-阅读到的新闻、会议中的问题、项目里的尝试，以及对方案的纠正，都会在与 Agent 协作时进入对话。这些信息经过了个人主动选择，也保留着提出问题、尝试方法和获得反馈的过程。
+News we read, questions from meetings, project experiments, and corrections to
+proposed solutions all enter conversations when we work with agents. We have
+actively selected this information, and the records retain the process of
+asking questions, trying methods, and receiving feedback.
 
-但是，它们分散在不同的项目与会话里。一个项目遇到的问题，可能已经在另一个项目中积累了可用的方法；一个早期没有继续推进的想法，也可能因为新出现的条件而值得重新尝试。
+But the records are scattered across projects and sessions. A method developed
+in one project may address a problem in another. An early idea that went no
+further may become worth revisiting when new conditions appear.
 
-我希望从这些历史对话中提炼知识，发现分散信息之间的联系，最终帮助自己形成值得行动的新想法。
+I want to extract knowledge from these conversations, find connections between
+scattered information, and turn those connections into ideas worth acting on.
 
-## 我怎样把它做成一个系统
+## How I turned it into a system
 
-我选择以 Agent 对话为入口，设计并实现了本地索引、结构化提炼、候选联想和明确反馈的 CLI 原型。
+I chose agent conversations as the entry point and designed and implemented a
+CLI prototype for local indexing, structured extraction, candidate connections,
+and explicit feedback.
 
-首先，接入 Codex 与 Claude Code 的会话记录，用 SQLite 保留来源、事件与时间。然后将长对话拆解为问题、已有机制和可引用的信息，让不同工作线中的积累能够被重新组合。
+First, it ingests Codex and Claude Code sessions, retaining source, event, and
+timestamp information in SQLite. It then breaks long conversations into
+problems, existing mechanisms, and quotable information so that knowledge from
+different lines of work can be recombined.
 
-候选建议需要讲清楚两边分别提供了什么、为什么现在相关，以及下一步可以怎样验证。我又加入引用核验、独立单侧对照和语义审查，检查它是否只是把相似主题放在一起，或仅凭一边的信息就能得出的通用建议。各阶段保留检查点，方便追踪失败与继续工作。
+A candidate must explain what each source contributes, why the connection
+matters now, and how to test it next. I added quotation checks, independent
+single-input controls, and semantic review to examine whether a candidate
+simply groups similar topics or offers generic advice that one source alone
+already supports. Stage checkpoints make failures traceable and allow work to
+continue.
 
-最后，用户可以把建议标记为有用、拒绝、已知或延后，让明确反馈影响后续探索，而不是只依靠模型自己打分。
+Finally, users can mark suggestions as `useful`, `reject`, `known`, or `later`.
+Explicit feedback informs later exploration rather than leaving selection to a
+model's own scores.
 
-## 一个合成案例
+## A synthetic case
 
-为说明流程，以下使用合成测试中的场景：
+The following scenario comes from synthetic tests:
 
-- 新信息是“字幕编辑需要反复把口述内容填入不同的剪辑软件”。
-- 历史记录中有一项能力：“语音工作台能够写入当前输入框，但还没有验证具体使用人群”。
-- 将两者联系后，可以提出一次具体试用：邀请字幕编辑完成真实任务，比较输入时间与人工修正次数。
-- 如果没有节省时间，或增加了修正次数，就停止这个人群方向。
+- New information: subtitle editors repeatedly enter dictated content into
+  different editing applications.
+- Historical capability: a voice workbench can write into the focused input
+  field, but its target users have not been validated.
+- Connecting the two suggests a concrete trial: invite a subtitle editor to
+  complete a real task and compare input time and manual corrections.
+- If it saves no time or increases corrections, stop pursuing that audience.
 
-这个合成案例展示了候选联系如何转化为一次可执行、可证伪的试用，也保留了“重新激活已有能力”的价值。
+This case shows how a candidate connection can become an actionable,
+falsifiable trial. It also preserves the value of reactivating an existing
+capability.
 
-## 我希望支持的两种创新方式
+## Two ways I want to support innovation
 
-**跨主题建立联系。** 将不同项目里的问题、资源与方法重新组织，寻找各自单独存在时不容易想到的新用途。
+**Connect across topics.** Reorganize problems, resources, and methods from
+different projects to find uses that are less apparent when each stays alone.
 
-**借鉴成熟方案后改造。** 先把成熟方案用在自己的任务里，发现不顺手或不适合的地方，再通过改造与使用反馈形成增量。
+**Adapt established solutions through use.** Put a mature solution to work on
+my own tasks, identify friction or poor fit, then improve it through
+modification and feedback from continued use.
 
-当前原型主要围绕第一条路径验证信息组织、候选联想与证据校验。第二条是持续探索的方法，还没有完整的自动化支持。
+The current prototype mainly examines information organization, candidate
+connections, and evidence checks within the first route. The second is an
+ongoing exploration method, without complete automated support.
 
-## 阶段性成果
+## What the project has produced so far
 
-“从历史对话中找灵感”已经被拆成了可检查的处理链：会话索引、问题与机制提炼、候选联想、来源与独立对照检查、用户反馈。现有代码还包含使用合成数据检验关键边界的测试与历史回放工具。
+The broad goal of finding inspiration in history has become an inspectable
+workflow: session indexing, problem and mechanism extraction, candidate
+connections, source and independent-control checks, and user feedback. The code
+also includes synthetic tests for important boundaries and historical replay
+tools.
 
-这些产出使建议能够被追问依据、判断是否已知，并转化为下一步行动。它们尚不能证明系统稳定提高了真实创新成功率。后续验证会继续看：哪些建议被用户愿意推进，哪些进入实际试用，以及实践反馈如何改变下一轮探索。
+These outputs make it possible to question the evidence behind a suggestion,
+identify what is already known, and propose a next action. They do not yet
+demonstrate a consistent improvement in real innovation success. Further
+validation will track which suggestions users want to pursue, which reach an
+actual trial, and how practical feedback changes the next round of exploration.
 
-这个项目也让我持续实践同一件事：从自己的使用需求出发，把抽象目标拆成系统，再用实际反馈调整问题定义与实现。
+This project is also a way to practice starting from my own needs, turning an
+abstract goal into a system, and using feedback to revise both the problem
+definition and the implementation.
