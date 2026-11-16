@@ -1,91 +1,37 @@
-# Second Brain: finding new connections in agent conversations
+# Second Brain: Compiling Agent History into Cross-Project Memory
 
-Use conversation history as a source of personal knowledge, then explore how
-reorganized information can lead to ideas that can be tested.
+> Standalone note-taking apps fail at capture consistency; daily Agent conversations already capture what we read, debug, build, and correct.
 
-**Current stage: personal research prototype; source code is not public yet.**
-
+**Status:** Local research prototype (`Python` / `SQLite`); source remains private.  
 [Back to profile](../README.md)
 
-## The problem I want to solve
+---
 
-News we read, questions from meetings, project experiments, and corrections to
-proposed solutions all enter conversations when we work with agents. We have
-actively selected this information, and the records retain the process of
-asking questions, trying methods, and receiving feedback.
+## The Problem
 
-But the records are scattered across projects and sessions. A method developed
-in one project may address a problem in another. An early idea that went no
-further may become worth revisiting when new conditions appear.
+Reading summaries, architecture discussions, experiment failures, and explicit human corrections all enter Agent transcripts every day. Because users actively filter and react inside those sessions, conversation history is unusually high-signal—yet stays trapped inside isolated project threads.
 
-I want to extract knowledge from these conversations, find connections between
-scattered information, and turn those connections into ideas worth acting on.
+A mechanism built for one repo may solve a bottleneck in another, and a stalled experiment can become viable months later when tooling shifts. The challenge is compiling scattered Agent logs into **traceable, non-generic cross-project hypotheses** without turning into yet another unverified LLM summary feed.
 
-## How I turned it into a system
+## System Pipeline
 
-I chose agent conversations as the entry point and designed and implemented a
-CLI prototype for local indexing, structured extraction, candidate connections,
-and explicit feedback.
+I built a local CLI compiler around Codex and Claude conversation records rather than adding another manual capture UI:
 
-First, it ingests Codex and Claude Code sessions, retaining source, event, and
-timestamp information in SQLite. It then breaks long conversations into
-problems, existing mechanisms, and quotable information so that knowledge from
-different lines of work can be recombined.
+1. **Structured Session Ingestion (`SQLite`)**: Retains source, event boundaries, and timestamps while decomposing raw threads into **Problem Episodes**, existing mechanisms, and verifiable evidence quotes.
+2. **Evidence & Single-Source Ablation Gates**: Requires every cross-project candidate to state what each source uniquely contributes, why timing changed, and how to test it next. Quotation verification and independent single-source controls prune candidates that merely cluster similar keywords or rephrase advice already supported by one thread alone.
+3. **Resumable Checkpoints & Explicit Feedback Loop**: Persists stage state for deterministic recovery and captures explicit user decisions (`useful`, `reject`, `known`, `later`) to steer future retrieval rather than trusting raw model confidence scores.
 
-A candidate must explain what each source contributes, why the connection
-matters now, and how to test it next. I added quotation checks, independent
-single-input controls, and semantic review to examine whether a candidate
-simply groups similar topics or offers generic advice that one source alone
-already supports. Stage checkpoints make failures traceable and allow work to
-continue.
+## Concrete Validation Logic (Synthetic Case)
 
-Finally, users can mark suggestions as `useful`, `reject`, `known`, or `later`.
-Explicit feedback informs later exploration rather than leaving selection to a
-model's own scores.
+- **Incoming signal**: Subtitle editors repeatedly dictate text into heterogeneous desktop editors.
+- **Historical capability**: A macOS voice tool supports cursor insertion across custom fields, without validated target-user retention.
+- **Compiled trial**: Pair the voice insertion path with a real subtitle-editing workflow and compare completion time plus manual edit rate. If edit overhead rises, drop the segment immediately.
 
-## A synthetic case
+Notice what makes this useful: **every synthesis terminates in a falsifiable experiment**, rather than vague "synergy" bullets.
 
-The following scenario comes from synthetic tests:
+## Two Complementary Modes of Iteration
 
-- New information: subtitle editors repeatedly enter dictated content into
-  different editing applications.
-- Historical capability: a voice workbench can write into the focused input
-  field, but its target users have not been validated.
-- Connecting the two suggests a concrete trial: invite a subtitle editor to
-  complete a real task and compare input time and manual corrections.
-- If it saves no time or increases corrections, stop pursuing that audience.
+- **Cross-project synthesis**: Recombine problems, primitives, and constraints from separate tracks to spot non-obvious transfers.
+- **Use-driven adaptation**: Put an existing mature tool into real daily workflows, locate exact friction points through use, adapt the mechanism, and re-verify.
 
-This case shows how a candidate connection can become an actionable,
-falsifiable trial. It also preserves the value of reactivating an existing
-capability.
-
-## Two ways I want to support innovation
-
-**Connect across topics.** Reorganize problems, resources, and methods from
-different projects to find uses that are less apparent when each stays alone.
-
-**Adapt established solutions through use.** Put a mature solution to work on
-my own tasks, identify friction or poor fit, then improve it through
-modification and feedback from continued use.
-
-The current prototype mainly examines information organization, candidate
-connections, and evidence checks within the first route. The second is an
-ongoing exploration method, without complete automated support.
-
-## What the project has produced so far
-
-The broad goal of finding inspiration in history has become an inspectable
-workflow: session indexing, problem and mechanism extraction, candidate
-connections, source and independent-control checks, and user feedback. The code
-also includes synthetic tests for important boundaries and historical replay
-tools.
-
-These outputs make it possible to question the evidence behind a suggestion,
-identify what is already known, and propose a next action. They do not yet
-demonstrate a consistent improvement in real innovation success. Further
-validation will track which suggestions users want to pursue, which reach an
-actual trial, and how practical feedback changes the next round of exploration.
-
-This project is also a way to practice starting from my own needs, turning an
-abstract goal into a system, and using feedback to revise both the problem
-definition and the implementation.
+The SQLite prototype currently automates indexing, episode extraction, cross-source synthesis, and evidence checks for the first path, while the second guides my product and engineering iterations directly.

@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="316" viewBox="0 0 880 316" role="img" aria-labelledby="title desc">
+  <title id="title">duroey — Selected Repositories and Systems</title>
+  <desc id="desc">Apple-style bento grid showcasing MyType, dsh-study-tree, Quantitative Research Workbench, and Second Brain.</desc>
+  <defs>
+    <linearGradient id="spark-dark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2997ff" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#2997ff" stop-opacity="0"/>
+    </linearGradient>
+    <style>
+      @keyframes pulseBar {
+        0%, 100% { opacity: 0.45; }
+        50% { opacity: 1; }
+      }
+      @keyframes nodeGlow {
+        0%, 100% { opacity: 0.72; }
+        50% { opacity: 1; }
+      }
+      .b1 { animation: pulseBar 3.2s ease-in-out infinite 0s; }
+      .b2 { animation: pulseBar 3.2s ease-in-out infinite 0.35s; }
+      .b3 { animation: pulseBar 3.2s ease-in-out infinite 0.7s; }
+      .b4 { animation: pulseBar 3.2s ease-in-out infinite 1.05s; }
+      .b5 { animation: pulseBar 3.2s ease-in-out infinite 1.4s; }
+      .ng { animation: nodeGlow 3.6s ease-in-out infinite; }
+      @media (prefers-reduced-motion: reduce) {
+        .b1, .b2, .b3, .b4, .b5, .ng { animation: none; }
+      }
+    </style>
+  </defs>
+
+  <g font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif">
+    <!-- Card 1: MyType -->
+    <rect x="1" y="1" width="392" height="314" rx="20" fill="#161b22" stroke="#2c333d"/>
+    <text x="26" y="34" font-size="11" font-weight="600" letter-spacing="0.8" fill="#2997ff">SWIFT · MACOS</text>
+    <text x="26" y="66" font-size="27" font-weight="700" letter-spacing="-0.6" fill="#f5f5f7">MyType</text>
+    <text x="26" y="92" font-size="13.5" fill="#98989d">
+      <tspan x="26" dy="0">Voice-first desktop Agent control plane.</tspan>
+      <tspan x="26" dy="19">Intent routing, handoff &amp; shared Inbox.</tspan>
+    </text>
+
+    <rect x="26" y="134" width="340" height="122" rx="14" fill="#0d1117" stroke="#2c333d"/>
+    <g stroke="#2997ff" stroke-width="3.5" stroke-linecap="round">
+      <line class="b1" x1="126" y1="176" x2="126" y2="188"/>
+      <line class="b2" x1="138" y1="169" x2="138" y2="195"/>
+      <line class="b3" x1="150" y1="162" x2="150" y2="202"/>
+      <line class="b4" x1="162" y1="154" x2="162" y2="210"/>
+      <line class="b5" x1="174" y1="166" x2="174" y2="198"/>
+      <line class="b3" x1="186" y1="158" x2="186" y2="206"/>
+      <line class="b4" x1="198" y1="150" x2="198" y2="214"/>
+      <line class="b2" x1="210" y1="161" x2="210" y2="203"/>
+      <line class="b5" x1="222" y1="156" x2="222" y2="208"/>
+      <line class="b1" x1="234" y1="165" x2="234" y2="199"/>
+      <line class="b3" x1="246" y1="171" x2="246" y2="193"/>
+      <line class="b2" x1="258" y1="176" x2="258" y2="188"/>
+    </g>
+    <rect x="52" y="224" width="96" height="20" rx="10" fill="#1c2129"/>
+    <text x="100" y="238" text-anchor="middle" font-size="10.5" font-weight="500" fill="#c9d1d9">Session Search</text>
+    <rect x="156" y="224" width="102" height="20" rx="10" fill="#1c2129"/>
+    <text x="207" y="238" text-anchor="middle" font-size="10.5" font-weight="500" fill="#c9d1d9">Native Handoff</text>
+    <rect x="266" y="224" width="72" height="20" rx="10" fill="#132b44"/>
+    <text x="302" y="238" text-anchor="middle" font-size="10.5" font-weight="600" fill="#58a6ff">Inbox</text>
+
+    <text x="26" y="292" font-size="11.5" fill="#7d8590">Built on Type4Me · Codex &amp; Claude</text>
+
+    <!-- Card 2: dsh-study-tree -->
+    <rect x="407" y="1" width="472" height="148" rx="20" fill="#161b22" stroke="#2c333d"/>
+    <text x="431" y="34" font-size="11" font-weight="600" letter-spacing="0.8" fill="#8b949e">TYPESCRIPT · PLUGIN v0.1.6</text>
+    <text x="431" y="64" font-size="22" font-weight="700" letter-spacing="-0.4" fill="#f5f5f7">dsh-study-tree</text>
+    <text x="431" y="90" font-size="13" fill="#98989d">
+      <tspan x="431" dy="0">Fork real Agent sessions from any span.</tspan>
+      <tspan x="431" dy="18">Branch deeply, keep the main thread clear.</tspan>
+    </text>
+
+    <g fill="none" stroke="#484f58" stroke-width="1.8" stroke-linecap="round">
+      <path d="M726 74 C750 74, 752 44, 776 44"/>
+      <path d="M726 74 C750 74, 752 104, 776 104"/>
+      <path d="M776 44 C798 44, 800 30, 826 30" stroke="#2997ff" stroke-width="2"/>
+      <path d="M776 44 C798 44, 800 58, 826 58"/>
+      <path d="M776 104 L826 104"/>
+    </g>
+    <circle cx="726" cy="74" r="5" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+    <circle cx="776" cy="44" r="5" fill="#161b22" stroke="#2997ff" stroke-width="2"/>
+    <circle cx="776" cy="104" r="5" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+    <circle class="ng" cx="826" cy="30" r="5.5" fill="#2997ff"/>
+    <circle cx="826" cy="58" r="4.5" fill="#161b22" stroke="#6e7681" stroke-width="1.8"/>
+    <circle cx="826" cy="104" r="4.5" fill="#161b22" stroke="#6e7681" stroke-width="1.8"/>
+
+    <!-- Card 3: Quant Workbench -->
+    <rect x="407" y="163" width="229" height="152" rx="20" fill="#161b22" stroke="#2c333d"/>
+    <text x="427" y="191" font-size="10.5" font-weight="600" letter-spacing="0.8" fill="#8b949e">PYTHON · SYSTEM NOTE</text>
+    <text x="427" y="216" font-size="18" font-weight="700" letter-spacing="-0.3" fill="#f5f5f7">Quant Workbench</text>
+    <text x="427" y="236" font-size="12" fill="#98989d">210 rank snapshots · 98 reports</text>
+    <path d="M427 294 L427 283 L452 286 L474 274 L498 278 L522 263 L546 266 L572 254 L596 258 L616 247 L616 294 Z" fill="url(#spark-dark)"/>
+    <path d="M427 283 L452 286 L474 274 L498 278 L522 263 L546 266 L572 254 L596 258 L616 247" fill="none" stroke="#2997ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle class="ng" cx="616" cy="247" r="3.5" fill="#2997ff"/>
+
+    <!-- Card 4: Second Brain -->
+    <rect x="650" y="163" width="229" height="152" rx="20" fill="#161b22" stroke="#2c333d"/>
+    <text x="670" y="191" font-size="10.5" font-weight="600" letter-spacing="0.8" fill="#8b949e">SQLITE · PROTOTYPE</text>
+    <text x="670" y="216" font-size="18" font-weight="700" letter-spacing="-0.3" fill="#f5f5f7">Second Brain</text>
+    <text x="670" y="236" font-size="12" fill="#98989d">Agent log memory compiler</text>
+    <g stroke="#484f58" stroke-width="1.5">
+      <line x1="686" y1="286" x2="736" y2="262"/>
+      <line x1="736" y1="262" x2="778" y2="282" stroke="#2997ff" stroke-width="1.8"/>
+      <line x1="778" y1="282" x2="824" y2="256" stroke="#2997ff" stroke-width="1.8"/>
+      <line x1="736" y1="262" x2="824" y2="256"/>
+      <line x1="824" y1="256" x2="854" y2="284"/>
+    </g>
+    <circle cx="686" cy="286" r="4" fill="#161b22" stroke="#8b949e" stroke-width="1.8"/>
+    <circle cx="736" cy="262" r="4.5" fill="#161b22" stroke="#2997ff" stroke-width="2"/>
+    <circle class="ng" cx="778" cy="282" r="5" fill="#2997ff"/>
+    <circle cx="824" cy="256" r="4.5" fill="#161b22" stroke="#2997ff" stroke-width="2"/>
+    <circle cx="854" cy="284" r="4" fill="#161b22" stroke="#8b949e" stroke-width="1.8"/>
+  </g>
+</svg>
